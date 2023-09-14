@@ -8,7 +8,7 @@ const Tab = createNativeStackNavigator();
 export default function StackNavigation() {
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Home">
+      <Tab.Navigator initialRouteName="Welcome">
         <Tab.Screen
           name="Home"
           component={Home}

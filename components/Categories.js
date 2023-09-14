@@ -1,7 +1,6 @@
 import { View, Text, ScrollView, Pressable, Image } from "react-native";
 import React from "react";
 import tw from "twrnc";
-import { categoryData } from "../constants/index";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
