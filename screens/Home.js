@@ -104,7 +104,7 @@ const Home = () => {
             placeholderTextColor={"gray"}
             style={[
               { fontSize: hp(1.7) },
-              tw`flex-1 text-base mb-1 pl-3 tracking-wider border-none p-2`,
+              tw`flex-1 text-base mb-1 pl-3 tracking-wider`,
             ]}
           />
           <View style={tw`bg-white rounded-full p-3`}>

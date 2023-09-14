@@ -6,7 +6,7 @@ import {
 } from "react-native-responsive-screen";
 import Animated, { FadeInDown } from "react-native-reanimated";
 
-const ReceipeCard = ({ item, index }) => {
+const ReceipeCard = ({ item, index, navigation }) => {
   let isEven = index % 2 == 0;
   return (
     <Animated.View
@@ -24,14 +24,15 @@ const ReceipeCard = ({ item, index }) => {
           },
           tw`flex justify-center mb-4 mt-3 mb-1`,
         ]}
+        onPress={() => navigation.navigate("ReceipeDetails", { ...item })}
       >
         <Image
           source={{ uri: item.strMealThumb }}
           style={[
             {
               width: "100%",
-              height: index % 3 == 0 ? hp(25) : hp(35),
               borderRadius: 30,
+              height: isEven ? hp(25) : hp(35),
             },
             tw`bg-black/5`,
           ]}

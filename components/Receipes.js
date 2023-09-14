@@ -7,9 +7,11 @@ import {
 import MasonryList from "@react-native-seoul/masonry-list";
 import { mealData } from "../constants";
 import ReceipeCard from "./ReceipeCard";
-import Loading from "./loading";
+import Loading from "./Loading";
+import { useNavigation } from "@react-navigation/native";
 
 const Receipes = ({ categories, receipes }) => {
+  const navigation = useNavigation();
   return (
     <View style={tw`mx-4 mt-3`}>
       <Text style={[{ fontSize: hp(3) }, tw`font-semibold text-neutral-600`]}>
@@ -25,7 +27,7 @@ const Receipes = ({ categories, receipes }) => {
             numColumns={2}
             showsVerticalScrollIndicator={false}
             renderItem={({ item, index }) => (
-              <ReceipeCard item={item} index={index} />
+              <ReceipeCard item={item} index={index} navigation={navigation} />
             )}
             //   refreshing={isLoadingNext}
             //   onRefresh={() => refetch({ first: ITEM_CNT })}
