@@ -7,6 +7,7 @@ import {
 import MasonryList from "@react-native-seoul/masonry-list";
 import { mealData } from "../constants";
 import ReceipeCard from "./ReceipeCard";
+import Loading from "./loading";
 
 const Receipes = ({ categories, receipes }) => {
   return (
@@ -14,7 +15,9 @@ const Receipes = ({ categories, receipes }) => {
       <Text style={[{ fontSize: hp(3) }, tw`font-semibold text-neutral-600`]}>
         Receipes
       </Text>
-      {categories.length === 0 || receipes.length === 0 ? null : (
+      {categories.length === 0 || receipes.length === 0 ? (
+        <Loading size="large" style={tw`mt-30`} />
+      ) : (
         <View>
           <MasonryList
             data={receipes}
